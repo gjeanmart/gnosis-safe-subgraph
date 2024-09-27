@@ -2,20 +2,16 @@ specVersion: 0.0.6
 description: Gnosis Safe Subgraph
 features:
   - nonFatalErrors
-  - grafting
-# graft:
-#   base: QmRYrGKGGBzRJCEZNaeFdrKjNsrA8JVbY9rYExz1fS1ybD
-#   block: 15013333
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: GnosisSafeProxyFactory_v1_1_1
-    network: {{network}}
+    network: mainnet
     source:
-      address: '{{factory.v1_1_1.addr}}'
       abi: GnosisSafeProxyFactory
-      startBlock: {{factory.v1_1_1.birthBlock}}
+      address: "0x76E2cFc1F5Fa8F6a5b3fC4c8F4788F0116861F9B"
+      startBlock: 9084508
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -31,14 +27,13 @@ dataSources:
       eventHandlers:
         - event: ProxyCreation(address)
           handler: handleProxyCreation_1_1_1
-
   - kind: ethereum/contract
     name: GnosisSafeProxyFactory_v1_3_0
-    network: {{network}}
+    network: mainnet
     source:
-      address: '{{factory.v1_3_0.addr}}'
       abi: GnosisSafeProxyFactory
-      startBlock: {{factory.v1_3_0.birthBlock}}
+      address: "0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2"
+      startBlock: 12504126
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -54,11 +49,10 @@ dataSources:
       eventHandlers:
         - event: ProxyCreation(address,address)
           handler: handleProxyCreation_1_3_0
-
 templates:
   - kind: ethereum/contract
     name: GnosisSafe
-    network: {{network}}
+    network: mainnet
     source:
       abi: GnosisSafe
     mapping:

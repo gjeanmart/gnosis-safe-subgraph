@@ -1,6 +1,4 @@
 #!/bin/bash
-source .env
-
 
 PROJECT_ID_MAINNET=gnosis-safe-mainnet
 PROJECT_ID_RINKEBY=gnosis-safe-rinkeby
@@ -78,13 +76,11 @@ fi
 if [ $NETWORK = "mumbai" ]; then
     PROJECT_ID=$PROJECT_ID_MUMBAI
 fi
-if [ $PRODUCT = "hosted-service" ]; then
-    PROJECT_ID=gjeanmart/$PROJECT_ID
-    PRODUCT_TARGET="--product $PRODUCT"
-fi
 if [ $PRODUCT = "studio" ]; then
     PRODUCT_TARGET=--studio
 fi
 
-npx graph auth $PRODUCT_TARGET $DEPLOY_KEY
-npx graph deploy --debug-fork $DEPLOYMENT_ID
+graph auth $PRODUCT_TARGET $ACCESS_TOKEN
+# TODO: uncomment below when ready and tested
+# graph deploy --debug-fork $DEPLOYMENT_ID
+# graph deploy --debug $PRODUCT_TARGET $PROJECT_ID

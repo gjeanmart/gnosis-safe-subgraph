@@ -5,7 +5,6 @@ yarn.lock
 generated
 build
 yarn-error.log
-subgraph.yaml
 .schema.remote.graphql
 data
 old

@@ -1,0 +1,23 @@
+{
+  "mainnet": {
+    "GnosisSafeProxyFactory_v1_1_1": {
+      "address": "0x76E2cFc1F5Fa8F6a5b3fC4c8F4788F0116861F9B",
+      "startBlock": 9084508
+    },
+    "GnosisSafeProxyFactory_v1_3_0": {
+      "address": "0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2",
+      "startBlock": 12504126
+    }
+  },
+  "matic" : {
+    "GnosisSafeProxyFactory_v1_1_1": {
+      "address": "0x76E2cFc1F5Fa8F6a5b3fC4c8F4788F0116861F9B",
+      "startBlock": 11772243
+    },
+    "GnosisSafeProxyFactory_v1_3_0": {
+      "address": "0xa6B71E26C5e0845f74c812102Ca7114b6a896AB2",
+      "startBlock": 14370881
+    }
+  }
+}
+
